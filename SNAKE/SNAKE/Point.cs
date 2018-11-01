@@ -22,6 +22,7 @@ namespace SNAKE
         {
             Console.SetCursorPosition(x, y);
             Console.WriteLine(sym);
+            Console.WriteLine("Hello");
         }
 
     }
