@@ -22,7 +22,13 @@ namespace SNAKE
         {
             Console.SetCursorPosition(x, y);
             Console.WriteLine(sym);
-            Console.WriteLine("Hello");
+           
+        }
+
+        public void PrintInfoPoint()
+        {
+            Console.WriteLine("x={0}", x);
+            Console.WriteLine("y={0}", y);
         }
 
     }
