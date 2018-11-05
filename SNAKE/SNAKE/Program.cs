@@ -10,23 +10,35 @@ namespace SNAKE
     {
         static void Main(string[] args)
         {
-            Point p1 = new Point(3, 6, '*');
-            Point p2 = new Point(3, 10, '#');
-            HorisontalLine horLine = new HorisontalLine(10,50,5,'=');
-            horLine.Draw();
+            Console.SetBufferSize(80,25);
+            //Point p1 = new Point(3, 6, '*');
+            //Point p2 = new Point(3, 10, '#');
+            HorisontalLine upLine = new HorisontalLine(1,78,1,'o');
+            HorisontalLine downLine = new HorisontalLine(1, 78, 24, 'o');
+            upLine.Draw();
+            downLine.Draw();
+
+            VerticalLine leftLine = new VerticalLine(1, 1, 24, 'o');
+            leftLine.Draw();
+            VerticalLine rightLine = new VerticalLine(78, 1, 24, 'o');
+            rightLine.Draw();
             Console.ReadLine();
-            VerticalLine verLine = new VerticalLine(10, 5, 20, '*');
-            verLine.Draw();
-            Console.ReadLine();
+
+
+            //horLine.Draw();
+            //Console.ReadLine();
+            //VerticalLine verLine = new VerticalLine(10, 5, 20, '*');
+            //verLine.Draw();
+            //Console.ReadLine();
         
 
         }
 
-        static void Move(Point p, int dx, int dy)
-        {
-            p.x = p.x + dx;
-            p.y = p.y + dy;
-        }
+        //static void Move(Point p, int dx, int dy)
+        //{
+        //    p.x = p.x + dx;
+        //    p.y = p.y + dy;
+        //}
 
     }
 }
