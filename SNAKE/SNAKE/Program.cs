@@ -23,17 +23,30 @@ namespace SNAKE
             leftLine.Drow();
             VerticalLine rightLine = new VerticalLine(78, 1, 24, 'o');
             rightLine.Drow();
-            Console.ReadLine();
+            //Console.ReadLine();
 
             Point point = new Point(10, 10, '*');
             Snake snake = new Snake(point, 10, Direction.Right);
             snake.Drow();
-            for (int j = 0; j <=10; j++)
+            //for (int j = 0; j <=10; j++)
+            //{
+            //    snake.Move();
+            //    Thread.Sleep(300);
+            //}
+            //Console.ReadLine();
+
+            while (true)
             {
+                if (Console.KeyAvailable)
+                {
+                    ConsoleKeyInfo key = Console.ReadKey();
+                    snake.HandleKey(key.Key);
+                }
+                Thread.Sleep(100);
                 snake.Move();
-                Thread.Sleep(300);
             }
-            Console.ReadLine();
+
+
 
             //horLine.Draw();
             //Console.ReadLine();
