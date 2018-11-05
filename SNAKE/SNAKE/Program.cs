@@ -24,13 +24,17 @@ namespace SNAKE
             rightLine.Draw();
             Console.ReadLine();
 
+            Point point = new Point(10, 10, '*');
+            Snake snake = new Snake(point, 10, Direction.Right);
+            snake.Draw();
+            Console.ReadLine();
 
             //horLine.Draw();
             //Console.ReadLine();
             //VerticalLine verLine = new VerticalLine(10, 5, 20, '*');
             //verLine.Draw();
             //Console.ReadLine();
-        
+
 
         }
 
