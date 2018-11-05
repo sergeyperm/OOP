@@ -9,11 +9,11 @@ namespace SNAKE
     class Figure
     {
         protected List<Point> pointList;
-        public void Draw()
+        public void Drow()
         {
             foreach (Point p in pointList)
             {
-                p.Draw();
+                p.Drow();
             }
         }
     }

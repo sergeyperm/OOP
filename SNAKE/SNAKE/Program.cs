@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace SNAKE
@@ -15,18 +16,23 @@ namespace SNAKE
             //Point p2 = new Point(3, 10, '#');
             HorisontalLine upLine = new HorisontalLine(1,78,1,'o');
             HorisontalLine downLine = new HorisontalLine(1, 78, 24, 'o');
-            upLine.Draw();
-            downLine.Draw();
+            upLine.Drow();
+            downLine.Drow();
 
             VerticalLine leftLine = new VerticalLine(1, 1, 24, 'o');
-            leftLine.Draw();
+            leftLine.Drow();
             VerticalLine rightLine = new VerticalLine(78, 1, 24, 'o');
-            rightLine.Draw();
+            rightLine.Drow();
             Console.ReadLine();
 
             Point point = new Point(10, 10, '*');
             Snake snake = new Snake(point, 10, Direction.Right);
-            snake.Draw();
+            snake.Drow();
+            for (int j = 0; j <=10; j++)
+            {
+                snake.Move();
+                Thread.Sleep(300);
+            }
             Console.ReadLine();
 
             //horLine.Draw();

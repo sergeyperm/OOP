@@ -18,7 +18,7 @@ namespace SNAKE
             y = _y;
             sym = _sym;
         }
-        public void Draw()
+        public void Drow()
         {
             Console.SetCursorPosition(x, y);
             Console.Write(sym);
@@ -52,6 +52,12 @@ namespace SNAKE
             }
 
 
+        }
+
+        internal void Clear()
+        {
+            sym = ' ';
+            Drow();
         }
 
         public void PrintInfoPoint()
