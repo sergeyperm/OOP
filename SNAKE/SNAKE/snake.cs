@@ -36,8 +36,9 @@ namespace SNAKE
         private Point GetNextPoint()
         {
             Point head = pointList.Last();
-            head.Move(1,direction);
-            return head;
+            Point nextPoint = new Point(head);
+            nextPoint.Move(1,direction);
+            return nextPoint;
         }
 
         public void HandleKey(ConsoleKey key)
