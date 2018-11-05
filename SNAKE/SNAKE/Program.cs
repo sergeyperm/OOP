@@ -12,13 +12,10 @@ namespace SNAKE
         {
             Point p1 = new Point(3, 6, '*');
             Point p2 = new Point(3, 10, '#');
-          
-            Console.ReadLine();
-
             HorisontalLine horLine = new HorisontalLine(10,50,5,'=');
             horLine.Draw();
             Console.ReadLine();
-            VerticalLine verLine = new VerticalLine(15, 2, 20, '*');
+            VerticalLine verLine = new VerticalLine(10, 5, 20, '*');
             verLine.Draw();
             Console.ReadLine();
         
