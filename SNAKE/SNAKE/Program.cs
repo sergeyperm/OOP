@@ -12,8 +12,6 @@ namespace SNAKE
         static void Main(string[] args)
         {
             Console.SetBufferSize(80,25);
-            //Point p1 = new Point(3, 6, '*');
-            //Point p2 = new Point(3, 10, '#');
             HorisontalLine upLine = new HorisontalLine(1,78,1,'o');
             HorisontalLine downLine = new HorisontalLine(1, 78, 24, 'o');
             upLine.Drow();
@@ -23,45 +21,39 @@ namespace SNAKE
             leftLine.Drow();
             VerticalLine rightLine = new VerticalLine(78, 1, 24, 'o');
             rightLine.Drow();
-            //Console.ReadLine();
-
+            
             Point point = new Point(10, 10, '*');
-            Snake snake = new Snake(point, 10, Direction.Right);
+            Snake snake = new Snake(point, 3, Direction.Right);
             snake.Drow();
-            //for (int j = 0; j <=10; j++)
-            //{
-            //    snake.Move();
-            //    Thread.Sleep(300);
-            //}
-            //Console.ReadLine();
+            FoodCreator foodCreator = new FoodCreator(25,80,'$');
+            Point food = foodCreator.Create();
+            food.Drow();
+            
 
             while (true)
             {
+                if (snake.Eat(food))
+                {
+                    food = foodCreator.Create();
+                    food.Drow();
+                }
+                else
+                {
+                    snake.Move();
+                }
+
+
+                Thread.Sleep(100);
                 if (Console.KeyAvailable)
                 {
                     ConsoleKeyInfo key = Console.ReadKey();
                     snake.HandleKey(key.Key);
                 }
-                Thread.Sleep(100);
-                snake.Move();
+                
             }
-
-
-
-            //horLine.Draw();
-            //Console.ReadLine();
-            //VerticalLine verLine = new VerticalLine(10, 5, 20, '*');
-            //verLine.Draw();
-            //Console.ReadLine();
-
-
+           
+            
         }
 
-        //static void Move(Point p, int dx, int dy)
-        //{
-        //    p.x = p.x + dx;
-        //    p.y = p.y + dy;
-        //}
-
-    }
+     }
 }

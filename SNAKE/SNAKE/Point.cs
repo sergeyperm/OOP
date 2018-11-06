@@ -11,6 +11,9 @@ namespace SNAKE
         public int x;
         public int y;
         public char sym;
+
+      
+
         public Point() { }
         public Point(int _x, int _y, char _sym)
         {
@@ -66,5 +69,10 @@ namespace SNAKE
             Console.WriteLine("y={0}", y);
         }
 
+        internal bool IsHit(Point food)
+        {
+            if ((this.x == food.x) && (this.y == food.y)) return true;
+            else return false;
+        }
     }
 }
