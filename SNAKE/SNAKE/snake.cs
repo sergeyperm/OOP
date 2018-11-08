@@ -54,6 +54,17 @@ namespace SNAKE
 
         }
 
+        internal bool IsHitTail()
+        {
+            var head = pointList.Last();
+            for (int i = 0; i < pointList.Count - 2; i++)
+            {
+                if (head.IsHit(pointList[i]))
+                    return true;
+            }
+            return false;
+        }
+
         internal bool Eat(Point food)
         {
             Point head = GetNextPoint();

@@ -23,8 +23,17 @@ namespace SNAKE
         }
         public void Drow()
         {
-            Console.SetCursorPosition(x, y);
-            Console.Write(sym);
+            if ((x >= 80) || (y >= 25))
+            {
+                Console.SetCursorPosition(40, 12);
+                Console.WriteLine("GAME OVER");
+                Console.ReadLine();
+            }
+            else
+            {
+                Console.SetCursorPosition(x, y);
+                Console.Write(sym);
+            }
            
         }
 

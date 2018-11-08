@@ -16,5 +16,23 @@ namespace SNAKE
                 p.Drow();
             }
         }
+        internal bool IsHit(Figure figure)
+        {
+            foreach (var p in pointList)
+            {
+                if (figure.IsHit(p))
+                    return true;
+            }
+            return false;
+        }
+        internal bool IsHit(Point point)
+        {
+            foreach (var p in pointList)
+            {
+                if (p.IsHit(point))
+                    return true;
+            }
+            return false;
+        }
     }
 }
